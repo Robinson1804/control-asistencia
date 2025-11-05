@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(test:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 10 node:*)",
+      "Bash(npm run setup-admin:*)",
+      "Bash(node server.js)",
+      "Bash(curl:*)",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

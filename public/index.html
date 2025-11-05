@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Control de Asistencia</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-header" style="text-align: center; margin-top: 80px; margin-bottom: 60px;">
+      <h1 style="font-size: 48px; color: var(--primary); margin-bottom: 16px;">Sistema de Control de Asistencia</h1>
+      <p style="font-size: 18px; color: var(--text-secondary);">Gestión integral de asistencias</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto;">
+      <!-- Tarjeta Login -->
+      <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='/login.html'">
+        <div style="font-size: 64px; margin-bottom: 16px;">=</div>
+        <h2 style="font-size: 24px; margin-bottom: 12px; color: var(--primary);">Administración</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">
+          Acceso para administradores. Registro manual de asistencias y gestión del sistema.
+        </p>
+        <a href="/login.html" class="btn btn-primary" style="width: 100%;">Iniciar Sesión</a>
+      </div>
+
+      <!-- Tarjeta Kiosko -->
+      <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='/kiosko.html'">
+        <div style="font-size: 64px; margin-bottom: 16px;">ñ</div>
+        <h2 style="font-size: 24px; margin-bottom: 12px; color: var(--info);">Kiosko</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">
+          Registro automático de entrada y salida. Marque su asistencia ingresando su DNI.
+        </p>
+        <a href="/kiosko.html" class="btn btn-info" style="width: 100%;">Ir al Kiosko</a>
+      </div>
+
+      <!-- Tarjeta Dashboard -->
+      <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='/dashboard.html'">
+        <div style="font-size: 64px; margin-bottom: 16px;">=Ê</div>
+        <h2 style="font-size: 24px; margin-bottom: 12px; color: var(--success);">Dashboard</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">
+          Reportes y estadísticas de asistencias. Exportación de datos y análisis.
+        </p>
+        <a href="/dashboard.html" class="btn btn-success" style="width: 100%;">Ver Dashboard</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px; color: var(--text-secondary);">
+      <p>Sistema de Control de Asistencia v1.0</p>
+      <p style="margin-top: 8px; font-size: 14px;">Desarrollado para gestión eficiente de asistencias</p>
+    </div>
+  </div>
+</body>
+</html>

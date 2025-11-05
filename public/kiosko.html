@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiosko - Registro de Asistencia</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="kiosko-container">
+    <div class="kiosko-card">
+      <div class="kiosko-header">
+        🏢 REGISTRO DE ASISTENCIA
+      </div>
+
+      <!-- Reloj -->
+      <div class="kiosko-reloj" id="reloj">00:00:00</div>
+
+      <!-- Selector de Sede -->
+      <div class="form-group" style="margin-bottom: 32px;">
+        <label class="form-label" style="font-size: 18px;">Sede:</label>
+        <select id="sedeKiosko" class="form-select" style="font-size: 18px; text-align: center;">
+          <option value="">Cargando sedes...</option>
+        </select>
+      </div>
+
+      <!-- Input DNI -->
+      <div class="form-group" style="margin-bottom: 32px;">
+        <label class="form-label" style="font-size: 20px;">Ingresa tu DNI:</label>
+        <input
+          type="text"
+          id="dniInput"
+          class="form-input large"
+          placeholder="DNI"
+          maxlength="20"
+          inputmode="numeric"
+          autofocus
+        >
+      </div>
+
+      <!-- Botones de Entrada/Salida -->
+      <button
+        class="btn btn-success btn-large"
+        onclick="registrarAsistencia('entrada')"
+      >
+        ⬇️ ENTRADA
+      </button>
+
+      <button
+        class="btn btn-danger btn-large"
+        onclick="registrarAsistencia('salida')"
+      >
+        ⬆️ SALIDA
+      </button>
+
+      <!-- Mensaje de confirmación -->
+      <div id="mensaje" class="hidden"></div>
+
+      <!-- Link al inicio -->
+      <div style="margin-top: 40px; text-align: center;">
+        <a href="/" style="color: var(--primary); text-decoration: none; font-size: 16px;">
+          ← Volver al inicio
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/kiosko.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Sistema de Asistencia</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>🔐 Sistema de Asistencia</h1>
+        <p style="color: var(--text-secondary);">Ingrese sus credenciales</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label">Usuario</label>
+          <input
+            type="text"
+            id="username"
+            class="form-input"
+            placeholder="Ingrese su usuario"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Ingrese su contraseña"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 24px;">
+          Iniciar Sesión
+        </button>
+
+        <div id="errorMessage" class="hidden" style="margin-top: 16px; padding: 12px; background: #fee2e2; color: var(--danger-dark); border-radius: 8px; text-align: center;">
+        </div>
+      </form>
+
+      <div style="text-align: center; margin-top: 32px;">
+        <a href="/" style="color: var(--primary); text-decoration: none;">
+          ← Volver al inicio
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: 24px; padding: 16px; background: var(--bg); border-radius: 8px;">
+        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">
+          <strong>Credenciales de prueba:</strong>
+        </p>
+        <p style="font-size: 14px; color: var(--text);">
+          Usuario: <strong>admin</strong><br>
+          Contraseña: <strong>admin123</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>

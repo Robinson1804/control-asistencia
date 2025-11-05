@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Manual - Sistema de Asistencia</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>📝 Registro Manual de Asistencia</h1>
+    <div class="nav-links">
+      <span id="userInfo" style="color: var(--text-secondary);"></span>
+      <a href="/dashboard.html">📊 Dashboard</a>
+      <a href="/kiosko.html">⏱️ Kiosko</a>
+      <a href="#" id="logoutBtn">🚪 Cerrar Sesión</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Configuración del Registro -->
+    <div class="card">
+      <div class="card-header">⚙️ Configuración del Registro</div>
+      <div class="filtros">
+        <div class="form-group">
+          <label class="form-label">Fecha</label>
+          <input type="date" id="fecha" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hora</label>
+          <input type="time" id="hora" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sede</label>
+          <select id="sede" class="form-select" required>
+            <option value="">Seleccione una sede...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tipo de Registro</label>
+          <select id="tipoRegistro" class="form-select" required>
+            <option value="entrada">⬇️ Entrada</option>
+            <option value="salida">⬆️ Salida</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Registrador</label>
+          <input type="text" id="registrador" class="form-input" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">🔍 Buscar Empleado</label>
+          <input
+            type="text"
+            id="buscarEmpleado"
+            class="form-input"
+            placeholder="Buscar por nombre o DNI..."
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Resumen del Día -->
+    <div class="card">
+      <div class="card-header">📊 Resumen del Día</div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Registrados</div>
+          <div class="stat-value" id="totalRegistrados">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Presentes</div>
+          <div class="stat-value success" id="totalPresentes">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Tardanzas</div>
+          <div class="stat-value warning" id="totalTardanzas">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Faltas</div>
+          <div class="stat-value danger" id="totalFaltas">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Permisos</div>
+          <div class="stat-value info" id="totalPermisos">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de Empleados -->
+    <div class="card">
+      <div class="card-header">👥 Lista de Empleados</div>
+      <div id="empleadosList" class="empleados-list">
+        <p style="text-align: center; color: var(--text-secondary); padding: 40px;">
+          Seleccione una sede para ver los empleados
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Permiso -->
+  <div id="permisoModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">📝 Motivo del Permiso</div>
+      <div class="form-group">
+        <label class="form-label">Ingrese el motivo del permiso:</label>
+        <textarea
+          id="motivoPermiso"
+          class="form-input"
+          rows="4"
+          placeholder="Ej: Cita médica, tramite personal, etc."
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="cerrarModalPermiso()">Cancelar</button>
+        <button class="btn btn-info" onclick="confirmarPermiso()">Confirmar Permiso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container para Toast notifications -->
+  <div id="toastContainer"></div>
+
+  <script src="/js/registro-manual.js"></script>
+</body>
+</html>
