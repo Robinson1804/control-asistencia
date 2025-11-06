@@ -618,6 +618,37 @@ app.get('/dashboard.html', (req, res) => {
 });
 
 // ========================================
+// RUTAS PARA ARCHIVOS ESTÁTICOS (CSS Y JS)
+// ========================================
+
+// CSS
+app.get('/css/style.css', (req, res) => {
+  res.setHeader('Content-Type', 'text/css');
+  res.sendFile(path.join(__dirname, 'public', 'css', 'style.css'));
+});
+
+// JavaScript
+app.get('/js/login.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'public', 'js', 'login.js'));
+});
+
+app.get('/js/registro-manual.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'public', 'js', 'registro-manual.js'));
+});
+
+app.get('/js/kiosko.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'public', 'js', 'kiosko.js'));
+});
+
+app.get('/js/dashboard.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'public', 'js', 'dashboard.js'));
+});
+
+// ========================================
 // RUTA PARA VERIFICAR SALUD DEL SERVIDOR
 // ========================================
 
