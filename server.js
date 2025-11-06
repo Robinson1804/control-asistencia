@@ -594,6 +594,30 @@ app.get('/api/reportes/estadisticas', verificarToken, async (req, res) => {
 });
 
 // ========================================
+// RUTAS PARA ARCHIVOS HTML
+// ========================================
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/registro-manual.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'registro-manual.html'));
+});
+
+app.get('/kiosko.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'kiosko.html'));
+});
+
+app.get('/dashboard.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+});
+
+// ========================================
 // RUTA PARA VERIFICAR SALUD DEL SERVIDOR
 // ========================================
 
