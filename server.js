@@ -629,4 +629,11 @@ async function iniciarServidor() {
 }
 
 // Iniciar el servidor
-iniciarServidor();
+
+// Iniciar el servidor solo si no está en Vercel
+if (process.env.NODE_ENV !== 'production') {
+  iniciarServidor();
+}
+
+// Exportar la app para Vercel
+module.exports = app;
